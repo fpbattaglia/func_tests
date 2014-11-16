@@ -8,7 +8,5 @@ def home_page(request):
         return redirect('/')
 
     items = Item.objects.all()
-    print "no POST here "
-    print "item count", len(items)
     return render(request, 'home.html',
         {'items': items})
