@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8512075-1b82-4d43-a54d-a023d2977458" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deploy_tools/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functional_tests/base.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functional_tests/test_layout_and_styling.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functional_tests/test_list_item_validation.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/functional_tests/tests.py" afterPath="$PROJECT_DIR$/functional_tests/test_simple_list_creation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy_tools/fabfile.py" afterPath="$PROJECT_DIR$/deploy_tools/fabfile.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lists/tests/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lists/tests/test_all.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lists/tests.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functional_tests/test_list_item_validation.py" afterPath="$PROJECT_DIR$/functional_tests/test_list_item_validation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="func_tests.iws" />
@@ -93,8 +91,8 @@
       <file leaf-file-name="test_list_item_validation.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functional_tests/test_list_item_validation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3488372" vertical-offset="0" max-vertical-offset="473">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.63508064" vertical-offset="0" max-vertical-offset="585">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -149,7 +147,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="195" />
+    <option name="x" value="690" />
     <option name="y" value="22" />
     <option name="width" value="1179" />
     <option name="height" value="874" />
@@ -536,7 +534,11 @@
       <created>1416584851477</created>
       <updated>1416584851477</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="split functional tests in single files">
+      <created>1416670823544</created>
+      <updated>1416670823544</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -560,7 +562,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="195" y="22" width="1179" height="874" extended-state="0" />
+    <frame x="690" y="22" width="1179" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -569,7 +571,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32277924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32277924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -637,7 +639,8 @@
     <MESSAGE value="functional tests points to external website" />
     <MESSAGE value="renamed superlists source" />
     <MESSAGE value="added fabfile.py for deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fabfile.py for deployment" />
+    <MESSAGE value="split functional tests in single files" />
+    <option name="LAST_COMMIT_MESSAGE" value="split functional tests in single files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,8 +713,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functional_tests/test_list_item_validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3488372" vertical-offset="0" max-vertical-offset="473">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.63508064" vertical-offset="0" max-vertical-offset="585">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding />
         </state>
       </provider>
