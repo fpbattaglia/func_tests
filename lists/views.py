@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ValidationError
 from lists.models import Item, List
+from lists.forms import ItemForm
 # Create your views here.
 
 
 def home_page(request):
     items = Item.objects.all()
     return render(request, 'home.html',
-                  {'items': items})
+                  {'form': ItemForm()})
 
 
 def view_list(request, list_id):
@@ -21,7 +22,7 @@ def view_list(request, list_id):
             return redirect(list_)
         except ValidationError:
             error = "You can't have an empty list item"
-        # TODO remove duplication of validation logic
+
 
     return render(request, 'list.html', {'list': list_, 'error': error})
 
