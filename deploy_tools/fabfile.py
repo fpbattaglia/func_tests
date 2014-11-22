@@ -30,7 +30,7 @@ def _get_latest_source(source_folder):
     else:
         run('git clone %s %s' % (REPO_URL, source_folder))
     current_commit = local("git log -n 1 --format=%H")
-    run('cd %s && git reset --hard %s', (source_folder, current_commit))
+    run('cd %s && git reset --hard %s' % (source_folder, current_commit))
 
 
 def _update_settings(source_folder, site_name):
@@ -40,19 +40,19 @@ def _update_settings(source_folder, site_name):
         'ALLOWED_HOSTS =.+$',
         'ALLOWED_HOSTS = ["%s"]' % (site_name,)
         )
-    secret_key_file = source_folder + 'superlists/secret_key.py'
+    secret_key_file = source_folder + '/superlists/secret_key.py'
     if not exists(secret_key_file):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
         key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
-        append(secret_key_file, "SECRET_KEY = %s" % (key,))
+        append(secret_key_file, "SECRET_KEY = '%s'" % (key,))
     append(settings_path, '\nfrom .secret_key import SECRET_KEY')
 
 
 def _update_virtualenv(source_folder):
-    virtualenv_folder = source_folder + '../virtualenv'
+    virtualenv_folder = source_folder + '/../virtualenv'
     if not exists(virtualenv_folder + '/bin/pip'):
         run('virtualenv %s' % (virtualenv_folder,))
-    run('%s/bin/pip install -r %s/requirements_ubu14.txt' % (
+    run('%s/bin/pip install -r %s/requirement_ubu14.txt' % (
         virtualenv_folder, source_folder
                                                             ))
 
