@@ -2,10 +2,22 @@
  * Created by fpbatta on 02/12/2014.
  */
 
-var initialize = function(navigator) {
-    $('#id_login').on('click', function() {
+var initialize = function(navigator, user, token, urls) {
+   $('#id_login').on('click', function() {
         navigator.id.request();
-    });
+     });
+   navigator.id.watch({
+       loggedInUser: user,
+       onlogin: function (assertion) {
+           $.post(
+                urls.login,
+               { assertion: assertion, csrfmiddlewaretoken: token }
+           )
+               .done( function () {window.location.reload(); })
+               .fail(function () {navigator.id.logout(); });
+       },
+       onlogout: function() {}
+   });
 };
 
 window.Superlists = {
